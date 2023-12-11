@@ -14,9 +14,10 @@ builder.Services.AddDbContext<StoreContext>(opt =>
 });
 
 builder.Services.AddTransient<IProductRepository, ProductRepository>();
+builder.Services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+
 
 var app = builder.Build();
-
 
 
 if (app.Environment.IsDevelopment())
