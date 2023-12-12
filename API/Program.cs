@@ -15,7 +15,7 @@ builder.Services.AddDbContext<StoreContext>(opt =>
 
 builder.Services.AddTransient<IProductRepository, ProductRepository>();
 builder.Services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 var app = builder.Build();
 
